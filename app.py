@@ -84,7 +84,7 @@ def verify_2fa():
     if not user:
         return jsonify({"message": "User not found"}), 404
     
-    if provided_code == user[0]:  # Replace with actual verification method
+    if provided_code == user[0]: 
         access_token = create_access_token(identity=username)
         return jsonify({"message": "2FA verified", "access_token": access_token})
     else:
